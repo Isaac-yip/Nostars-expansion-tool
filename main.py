@@ -68,7 +68,7 @@ def time_control():
 
         items_open = open("items.py", "a")
         for tuple in items_list.items_list_list:
-            if int(tuple[0].total_time) <= int(time_now()):
+            if int(tuple[0].total_time) <= int(time_now()) or int(tuple[0].time_remaining) == 0 or int(tuple[0].time_remaining)<0:
                 items_open.write(f"{tuple[0].name} = Construction(\"{tuple[0].name}\", \"{tuple[0].total_time}\", \"{000}\", \"{tuple[0].start_time}\", True)\n")
             # elif int(tuple[0].start_time)>int(time_now()):
             #     items_open.write(f"{tuple[0].name} = Construction(\"{tuple[0].name}\", \"{tuple[0].total_time}\", \"{000}\", \"{tuple[0].start_time}\", True)\n")
